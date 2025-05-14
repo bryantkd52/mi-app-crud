@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Registros</title>
+</head>
+<body>
+  <h1>Registros</h1>
+  <a href="/new">Agregar nuevo</a>
+  <ul>
+    <% items.forEach(item => { %>
+      <li>
+        <%= item.name %>
+        <form action="/delete/<%= item.id %>" method="POST" style="display:inline">
+          <button>Eliminar</button>
+        </form>
+        <a href="/edit/<%= item.id %>">Editar</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
